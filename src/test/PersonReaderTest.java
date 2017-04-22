@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import models.Person;
-import models.PersonReader;
+//import models.PersonReader;
 
 public class PersonReaderTest {
 	
@@ -18,14 +18,14 @@ public class PersonReaderTest {
 		
 	}
 
-	@Test
+	/*@Test
 	public void testmovie() throws IOException
 	{
 		assertEquals(0, PersonReader.persons.size());
 		PersonReader.PersonReader();
 		assert(PersonReader.persons.size() > 0);//tests reading in the data
 		
-	}
+	}*/
 	
 	@Test 
 	public void testGetFirstName()//get first name

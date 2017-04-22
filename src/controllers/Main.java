@@ -2,21 +2,25 @@ package controllers;
 
 import java.util.ArrayList;
 
-import models.Node;
+import models.FamilyTree;
 import models.Person;
 
 public class Main {
 
 	public static void main(String[] args) {
-		ArrayList<Person> persons = new ArrayList<Person>();
-		Node people = new Node(null, null, 0, null, null);
+		Person colby = new Person("Colby",false, 1869);
+		
 
-		people.addMember("rachel", "f", 1996, "Nila", "Jon");
-		people.addMember("rac", "f", 1993, "Niola", "Joh");
-		people.addMember("rahel", "f", 1994, "Nia", "ohn");
-		people.addMember("rhel", "f", 1995, "Nicola", "hn");
-		people.addMember("rache", "f", 1997, "Nicola", "?");
-		System.out.println(people.findNode(1996));
+		Person desmond = new Person("Desmond",false ,1897);
+		Person reese = new Person("Reese" ,false, 1907 );
+		Person Celeste = new Person("Celeste" ,true, 1869 );
+		
+		desmond.setParentF(colby);
+		desmond.setParentM(Celeste);
+		reese.setParentF(colby);
+		reese.setParentM(Celeste);
+		System.out.println(desmond);
+		System.out.println(reese);
+		System.out.println(colby); 
 	}
-
 }

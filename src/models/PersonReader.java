@@ -1,4 +1,4 @@
-package models;
+/*package models;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class PersonReader {
 		String[] personTokens = personDetails.split(delims);
 		
 		String name = (personTokens[0]);
-		String gender = (personTokens[1]);
+		Boolean gender = (personTokens[1]);
 		int DOB = 	Integer.parseInt(personTokens[2]);
 		String parentF = (personTokens[3]);
 		String parentM = (personTokens[4]);
@@ -44,6 +44,4 @@ public class PersonReader {
 	inPerson.close();
 
 	}
-}
-
-
+}*/

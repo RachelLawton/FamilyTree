@@ -2,21 +2,26 @@ package models;
 
 public class Person {
 
-	private static String name;
-	private String gender;
-	private int DOB;
-	private String parentF;
-	private String parentM;
-	
-	public Person(String name, String gender,int DOB,String parentF,String parentM){
+	public String name;
+	public boolean gender;
+	public int DOB;
+	public static Person parentF;
+	public static Person parentM;
+
+	public Person(String name, boolean gender,int DOB,Person parentF,Person parentM){
 		this.name = name;
 		this.gender = gender;
 		this.DOB = DOB;
 		this.parentF = parentF;
 		this.parentM = parentM;
 	}
+	public Person (String name, boolean gender, int DOB){
+		this.name = name;
+		this.gender = gender;
+		this.DOB = DOB;
+	}
 
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 
@@ -25,10 +30,13 @@ public class Person {
 	}
 
 	public String getGender() {
-		return gender;
+		if (gender) 
+			return "F";
+		else
+			return "M";
 	}
 
-	public void setGender(String gender) {
+	public void setGender(boolean gender) {
 		this.gender = gender;
 	}
 
@@ -40,25 +48,36 @@ public class Person {
 		this.DOB= DOB;
 	}
 
-	public String getParentF() {
+	public Person getParentF() {
 		return parentF;
 	}
 
-	public void setParentF(String parentF) {
+	public void setParentF(Person parentF) {
 		this.parentF = parentF;
 	}
 
-	public String getParentM() {
+	public Person getParentM() {
 		return parentM;
 	}
 
-	public void setParentM(String parentM) {
+	public void setParentM(Person parentM) {
 		this.parentM = parentM;
 	}
 
-	@Override
-	public String toString() {
-		return "Person [name=" + name + ", gender=" + gender + ", DOB=" + DOB + ", parentF=" + parentF + ", parentM="
-				+ parentM + "]";
+	public String toString(){
+		String mom = "Not known";
+		if (parentM != null) 
+			mom = parentM.name;
+		String dad = "Not known";
+		if (parentF != null) 
+			dad = parentF.name;      
+		return name + "["+ getGender()+"]" + DOB + "\n Mother = "  + mom + "\n Father = " + dad;
 	}
+	public boolean sibling(Person not){
+		if (parentF != null && parentM != null && not.parentM != null && not.parentF != null)
+			return (parentM.equals(not.parentM) && parentF.equals(not.parentF) && !this.equals(not));
+		return false;
+	}
+
+
 }
