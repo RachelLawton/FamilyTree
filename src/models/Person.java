@@ -12,7 +12,7 @@ public class Person {
 	public static String mother;
 	public static String father;
 
-	public Person(String name, String gender,int DOB,Person dad,Person mom){
+	public Person(String name, String gender,int DOB,Person mom,Person dad){
 		this.name = name;
 		this.gender = gender;
 		this.DOB = DOB;
@@ -22,6 +22,13 @@ public class Person {
 	public Person(Person dad,Person mom){
 		
 	}
+	public Person(String name)
+	{
+		this.name = name;
+		
+
+	}
+
 	
 	/*public int compareTo(Person p) {
 		// If the frequency of the current node is greater than the frequency of object o, return 1
@@ -35,13 +42,14 @@ public class Person {
 		// Else return 0 because the frequency must be the same
 		return 0;
 	}*/
-
+	
+//getter setters
 	public Person(String name, String gender, int DOB) {
 		this.name = name;
 		this.gender = gender;
 		this.DOB = DOB;
 	}
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
 

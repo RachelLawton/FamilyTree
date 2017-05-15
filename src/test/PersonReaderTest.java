@@ -20,7 +20,7 @@ public class PersonReaderTest {
 	}
 
 	@Test
-	public void testmovie() throws IOException
+	public void testreader() throws IOException
 	{
 		assertEquals(0, PersonReader.persons.size());
 		PersonReader.PersonReader();
@@ -31,10 +31,10 @@ public class PersonReaderTest {
 	@Test 
 	public void testGetFirstName()//get first name
 	{
-		//assertEquals("Oliver",Person.getName());
-		//assertEquals ("Colby",Person.getName());
-		//assertEquals(1,userReader.getFirstName());
-	}
+		/*assertEquals("Oliver",Person.getName());
+		assertEquals ("Colby",Person.getName());
+		//assertEquals(1,PersonReader.getName());
+*/	}
 
 
 }
